@@ -21,6 +21,11 @@ html,body,#app,#app>div{
   color: #2c3e50;
 }
 
+#app>div{
+  display: flex;
+  flex-direction: column;
+}
+
 #nav {
   padding: 30px;
 

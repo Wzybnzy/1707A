@@ -43,7 +43,7 @@ const routes = [
     },
     {
       path:'/',
-      redirect:'/index'
+      redirect:'/index/home'
     }
   ]
 
