@@ -79,8 +79,9 @@ export default {
       if (shop.data.data.length <= 0) {
         this.show = true;
       }
-
+      this.myBScroll.refresh();
       this.myBScroll.finishPullUp();
+      this.myBScroll.finishPullDown();
     }
   }
 };
