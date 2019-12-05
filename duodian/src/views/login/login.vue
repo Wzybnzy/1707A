@@ -50,7 +50,8 @@ export default {
         console.log(res);
         if (res.data.code == 1) {
           window.localStorage.token = res.data.data.token;
-          this.$router.push({ path: "/index/home" });
+          console.log(this.$route)
+          this.$router.push({ path: this.$route.query.redirect });
         }
       } catch (e) {
         console.log(e.response);

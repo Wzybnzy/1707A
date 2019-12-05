@@ -11,4 +11,41 @@ const router = new VueRouter({
   routes
 })
 
+// const list = ['car','my'];
+
+router.beforeEach((to,from,next)=>{
+  console.log(to,'to********');
+  console.log(from,'from********');
+  // if(list.includes(to.name)){ //需要守卫
+  //   // 判断是否登录
+  //   if(!window.localStorage.token){ //没有登录
+  //       next('/login');
+  //   } else {
+  //     next();
+  //   }
+  // } else {
+  //   next();
+
+  // }
+
+
+  if(to.matched.some(item => item.meta.requiresAuth)){ //需要守卫
+      //判断是否登录
+      if(!window.localStorage.token){ //没有登录
+          next({
+            path:'/login',
+            query:{
+              redirect:to.fullPath
+            }
+          });
+      } else {
+        next();
+      }
+  } else {
+    next();
+  }
+
+
+})
+
 export default router

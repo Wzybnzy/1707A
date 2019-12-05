@@ -21,6 +21,7 @@ export default {
     };
   },
   methods: {
+    
     async Registry() {
       let phone = this.phone,
         pwd = this.pwd;
