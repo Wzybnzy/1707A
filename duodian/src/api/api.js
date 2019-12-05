@@ -12,4 +12,11 @@ export const banner = ()=> axios.get('/api/home/banner');
 //获取首页列表
 export const homeShop = (params)=> axios.get('/api/home/shop',{params});
 
+//分类页面
+export const shopType = ()=> axios.get('/api/shop/shopType');
+//刷选分类
+export const selectType = (params)=> axios.get('/api/shop/selectType',{params});
+
+
+
 
