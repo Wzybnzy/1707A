@@ -29,6 +29,7 @@
 import {shopType,selectType} from '@/api/api'
 import Item from '@/components/item'
 export default {
+  name:'classify',
   data(){
     return {
       leftList:[],

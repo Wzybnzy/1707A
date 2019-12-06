@@ -9,7 +9,7 @@
     </div>
     <div class="scroll">
       <div>
-        <Item v-for="(item, index) in list" :key="index" :item="item" />
+        <Item v-for="(item, index) in list" :key="index" :item="item"></Item>
         <div v-if="show">---我是有底线的---</div>
       </div>
     </div>
@@ -23,6 +23,7 @@ import "swiper/css/swiper.min.css";
 import Item from "@/components/item";
 import BScroll from "better-scroll";
 export default {
+  name:'home',
   data() {
     return {
       banner: [],
@@ -58,14 +59,14 @@ export default {
 
       this.myBScroll.on("pullingUp", () => {
         console.log("上拉加载");
-        this.pageid++;
+        this.pageid++; //0-9  10-19  20-29    0 10  1 10   2 10 3 10
         if (!this.show) {
           this.getlist();
         }
       });
 
       this.myBScroll.on("pullingDown", () => {
-        this.pageid = 0;
+        this.pageid = 0;  
         this.list = [];
         this.show = false;
         this.getlist();

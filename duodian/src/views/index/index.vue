@@ -1,6 +1,8 @@
 <template>
   <div class="index">
-    <router-view />
+    <keep-alive include="home,classify">
+      <router-view />
+    </keep-alive>
     <footer>
         <router-link :to="item.url" v-for="(item,index) in arr" :key="index" tag="dl">
            <dt :class="['icon', 'iconfont',item.icon ]"></dt>
