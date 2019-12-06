@@ -49,6 +49,7 @@ export default {
   methods: {
     _initBScroll() {
       this.myBScroll = new BScroll(".scroll", {
+        click:true,
         pullUpLoad: {
           threshold: -100
         },

@@ -8,17 +8,44 @@
           <div>累计{{item.volume}}份</div>
           <div>
               <span>价格:{{item.price}}</span>
-              <span>购物车</span>
+              <slot>
+                <span @click="goToAddCar">购物车</span>
+              </slot>
           </div>
       </dd>
   </dl>
 </template>
 
 <script>
+import {getUserInfo,addCar} from '@/api/api'
 export default {
     props:{
         item:{
             type:Object
+        }
+    },
+    methods:{
+       async goToAddCar(){
+            console.log(1321341241234123);
+            if(!window.localStorage.token){ //没有登录
+                this.$router.push({
+                    path:'/login',
+                    query:{
+                        redirect:'/index/home'
+                    }
+                })
+                return;
+            }
+
+            console.log(this.item.id);
+            let res = await getUserInfo();
+            console.log(res);
+            //添加购物车
+            let shop = await addCar({
+                shop_id:this.item.id,
+                user_id:res.data.data.uid
+            })
+            console.log(shop,'shop************')
         }
     }
 }
