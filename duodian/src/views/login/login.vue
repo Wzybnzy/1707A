@@ -39,7 +39,7 @@ export default {
     //     console.log(e)
     //   })
     // }
-    async submit() {
+    async submit() { // this.$toast('添加购物车成功',1000); 
       try {
         // let res = await axios.post("/api/user/login", {
         //   phone: this.phone,

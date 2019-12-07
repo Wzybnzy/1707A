@@ -24,8 +24,18 @@ export const selectType = (params)=> httpAxios.get('/api/shop/selectType',{param
 
 export const addCar = (params)=> httpAxios.post('/api/car/addCar',params);
 
+//删除购物车
+export const removeCar = (params)=> httpAxios.post('/api/car/removeCar',params);
+
+
 // 获取用户信息
 export const getUserInfo = ()=> httpAxios.get('/api/user/getUserInfo');
+
+
+// 获取购物车商品
+export const getCar = (params)=> httpAxios.get('/api/car/getCar',{params});
+
+
 
 
 
