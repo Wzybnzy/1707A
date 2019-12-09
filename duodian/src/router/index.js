@@ -3,7 +3,10 @@ import VueRouter from 'vue-router'
 
 import routes from './routerConfig'
 
-Vue.use(VueRouter)  // 注册插件
+Vue.use(VueRouter)  // 注册插件   //<router-view>  <router-link>
+
+// <router-view>  <router-link>  注册组件
+// 挂载原型  this.$router  this.$route
 
 const router = new VueRouter({
   mode: 'history',

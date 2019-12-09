@@ -22,6 +22,9 @@ import Swiper from "swiper";
 import "swiper/css/swiper.min.css";
 import Item from "@/components/item";
 import BScroll from "better-scroll";
+
+// import Toast from '@/vendor/toast.vue'
+
 export default {
   name:'home',
   data() {
@@ -35,6 +38,7 @@ export default {
   },
   components: {
     Item
+    // Toast
   },
   async created() {
     let res = await banner();

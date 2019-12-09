@@ -45,6 +45,13 @@ export default {
                 shop_id:this.item.id,
                 user_id:res.data.data.uid
             })
+            //消息提示
+
+            this.$toast('添加购物车成功',1500);
+            // this.$router
+            // this.$route
+
+
             console.log(shop,'shop************')
         }
     }
