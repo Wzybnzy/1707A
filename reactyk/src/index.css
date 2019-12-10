@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html,body,#root,#root>div{
+  height: 100%;
+  width: 100%;
+}
+
+#root>div{
+  display: flex;
+  flex-direction: column;
+}
+footer{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+footer>a{
+  flex: 1;
+  text-align: center;
+  line-height: 50px;
+}
+#root>div>div{
+  flex: 1;
+  overflow: hidden;
+  width: 100%;
+}
