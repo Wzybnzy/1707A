@@ -5,8 +5,6 @@ export default class Home extends Component {
         return (
             <div>
                 首页
-               
-
             </div>
         )
     }
