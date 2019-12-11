@@ -8,10 +8,10 @@ import Loadable from 'react-loadable';
 
 import React from 'react'
 
-
 function Loading(){
     return <div>loading....</div>
 }
+
 
 const Index = Loadable({
     loader: ()=> import('@/views/index/index'),
@@ -26,6 +26,20 @@ const Detail = Loadable({
     loader: ()=> import('@/views/detail/detail'),
     loading:Loading
 })
+
+const Dican = Loadable({
+    loader: ()=> import('@/views/detail/dican/dican'),
+    loading:Loading
+})
+const Comment = Loadable({
+    loader: ()=> import('@/views/detail/comment/comment'),
+    loading:Loading
+})
+const Bussi = Loadable({
+    loader: ()=> import('@/views/detail/bussi/bussi'),
+    loading:Loading
+})
+
 const Home = Loadable({
     loader: ()=> import('@/views/index/home/home'),
     loading:Loading
@@ -47,8 +61,7 @@ const routes = [
         children:[
             {
                 path:'/index/home',
-                component:Home,
-                children:[]
+                component:Home
             },
             {
                 path:'/index/order',
@@ -66,7 +79,25 @@ const routes = [
     },
     {
         path:'/detail',
-        component:Detail
+        component:Detail,
+        children:[
+            {
+                path:'/detail/dican',
+                component:Dican
+            },
+            {
+                path:'/detail/comment',
+                component:Comment
+            },
+            {
+                path:'/detail/bussi',
+                component:Bussi
+            },
+            {
+                path:'/detail',
+                to:'/detail/dican'
+            }
+        ]
     },
     {
         path:'/login',

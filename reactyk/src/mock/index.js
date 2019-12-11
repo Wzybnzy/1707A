@@ -1,8 +1,11 @@
 import Mock from 'mockjs'
+import shop from './shop.json'
 
 Mock.mock('/api/list',{
     'list|10-20':[]
 });
+
+Mock.mock('/api/shop',shop);
 
 Mock.mock('/api/login',({body})=>{
     console.log(body);
