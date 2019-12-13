@@ -1,0 +1,14 @@
+.header{
+    height: 44px;
+    width: 100%;
+    display: flex;
+    padding: 0 10px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    h3{
+        flex: 1;
+        text-align: center;
+    }
+}

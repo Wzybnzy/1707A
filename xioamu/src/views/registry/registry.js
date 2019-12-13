@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { register } from '../../api/api'
+import Toast from 'antd-mobile/lib/toast';  // 加载 JS
+import 'antd-mobile/lib/toast/style/css';        // 加载 CSS
 export default class Registry extends Component {
     state = {
         name: '',
@@ -34,10 +36,11 @@ export default class Registry extends Component {
                 }
             }
             catch (e) {
+                Toast.info(e.response.data.message,3);
                 console.log(e.response.data.message)
             }
         } else {
-            alert('两次密码不一致');
+            Toast.info('两次密码不一致', 3);
         }
     }
 }
