@@ -46,7 +46,7 @@ html,body,#root,#root>div{
   display: flex;
   flex-direction: column;
 }
-#root>div>div{
+#root>div>div.index{
   flex: 1;
 }
 footer{
@@ -59,4 +59,10 @@ footer>a{
   flex:1;
   line-height: 50px;
   text-align: center;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

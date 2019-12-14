@@ -5,7 +5,7 @@ export default class Index extends Component {
     render() {
         let {child} = this.props;
         return (
-            <div>
+            <div className="index">
                 <RouterView routes={child}/>
                 <footer>
                     <NavLink to="/index/home">首页</NavLink>

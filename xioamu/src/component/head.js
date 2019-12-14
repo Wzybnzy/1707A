@@ -6,11 +6,12 @@ import {withRouter} from 'react-router-dom'
     static defaultProps = {
         back:false,
         title:'沐恩menu',
-        right:''
+        right:'',
+        url:'/createvote'
     }
     render() {
-        let {back,title,right} = this.props;
-        console.log(back,title)
+        let {back,title,right,url} = this.props;
+        console.log(back,title,url,'^^^^^^^^^^')
         return (
             <header className={`${head['header']}`}>
                 {
@@ -19,7 +20,9 @@ import {withRouter} from 'react-router-dom'
                     }}>&lt;</span> : null
                 }
                 <h3>{title}</h3>
-                <span>{right}</span>
+                <span onClick={()=>{
+                    this.props.history.push(url);
+                }}>{right}</span>
             </header>
         )
     }
