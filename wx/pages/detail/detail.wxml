@@ -1,0 +1,5 @@
+<!--pages/detail/detail.wxml-->
+<text>pages/detail/detail.wxml</text>
+
+<view>姓名：{{name}}</view>
+<view>年龄：{{age}}</view>

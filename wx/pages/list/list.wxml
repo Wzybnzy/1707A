@@ -1,2 +1,39 @@
 <!--pages/list/list.wxml-->
 <text>pages/list/list.wxml</text>
+<import src="header.wxml"/>
+<template is="head"/>
+<include src="header.wxml" />
+
+<view>
+  {{msg}}
+</view>
+<view id="item-{{id}}">{{txt}}</view>
+
+<view wx:if="{{grade > 80}}">优秀</view>
+<view wx:elif="{{grade > 60 && grade <= 80}}">良好</view>
+<view wx:else>不及格</view>
+
+<view hidden="{{flag}}">今天周一了</view>
+
+<view wx:for="{{arr}}" wx:for-item="obj" wx:for-index="ind" wx:key="ind" bindtap="goToDetail" data-ind="{{ind}}">
+  <template is="list" data="{{ind,obj}}"></template>
+</view>
+
+<view bindtap="goTorizhi">去日志</view>
+
+<template name="list">
+   下标：{{ind}}
+  <text>姓名：{{obj.name}}</text>
+  <text>年龄：{{obj.age}}</text>
+</template>
+
+
+<view wx:for="{{msg}}">
+  {{index}}---{{item}}
+</view>
+
+
+
+
+
+

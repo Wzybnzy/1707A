@@ -1,36 +1,24 @@
-// pages/list/list.js
+// pages/detail/detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    msg:"1707A",
-    txt:'hello world',
-    id:1,
-    grade:78,
-    flag:false,
-    arr:[
-      {
-        name:'小花',
-        age:18
-      },
-      {
-        name: '小黑',
-        age: 20
-      },
-      {
-        name: '小兰',
-        age: 11
-      }
-    ]
+    name:'',
+    age:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options,'********');
+    let {name,age} = options;
+    this.setData({
+      name,
+      age
+    })
   },
 
   /**
@@ -80,21 +68,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  goTorizhi(){
-    console.log('日志');
-    wx.switchTab({
-      url: '/pages/logs/logs'
-    })
-  },
-  goToDetail({ currentTarget}){
-    console.log('详情', currentTarget);
-    let {ind} = currentTarget.dataset;
-    console.log(ind);
-    let name = this.data.arr[ind].name;
-    let age = this.data.arr[ind].age;
-    wx.navigateTo({
-      url: '/pages/detail/detail?name='+name+'&age='+age
-    })
   }
 })

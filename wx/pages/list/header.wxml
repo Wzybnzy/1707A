@@ -1,0 +1,6 @@
+<view>内容</view>
+
+
+<template name="head">
+  <view>头部&&&&&&&&&&&&&&&&&&&</view>
+</template>
