@@ -1,0 +1,23 @@
+<!--pages/tab/tab.wxml-->
+<view>
+  <input placeholder="请输入" value="{{val}}" bindinput="changeInput"></input>
+  <button bindtap="submit">按钮</button>
+</view>
+
+
+<view>
+    <view wx:if="{{count == 0}}">暂无待办事项</view>
+    <view wx:else>{{count}}个待办事项</view>
+</view>
+
+
+<view>
+  <text wx:for="{{arr}}" class="{{index == ind ? 'active':''}}" bindtap="changeInd" data-ind="{{index}}" data-type="{{item.type}}">{{item.name}}</text>
+</view>
+
+
+<checkbox-group bindchange="checkboxChange">
+  <view class="checkbox" wx:for="{{newlist}}">
+    <checkbox value="{{item.id}}" checked="{{item.check}}"/>{{item.val}}
+  </view>
+</checkbox-group>
