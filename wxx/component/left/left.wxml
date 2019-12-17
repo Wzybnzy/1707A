@@ -1,0 +1,4 @@
+<!--component/left/left.wxml-->
+<view class="left">
+   <view wx:for="{{list}}" class="{{index == ind ? 'active':''}}" bindtap="changeTap" data-ind="{{index}}">{{item.title}}</view>
+</view>

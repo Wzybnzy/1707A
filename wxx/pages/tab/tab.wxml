@@ -1,0 +1,11 @@
+<!--pages/tab/tab.wxml-->
+<view class="wrapper">
+  <!-- <view class="left">
+    <view wx:for="{{list}}" class="{{index == ind ? 'active':''}}" bindtap="changeInd" data-ind="{{index}}">{{item.title}}</view>
+  </view> -->
+  <left list="{{list}}" ind="{{ind}}" bindchangeInd="change"></left>
+
+  <view class="right">
+    <view wx:for="{{list[ind].children}}">{{item.name}}</view>
+  </view>
+</view>

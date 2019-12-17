@@ -1,0 +1,11 @@
+/* component/left/left.wxss */
+
+.left{
+  width: 120px;
+  height: 100%;
+  border-right: 1px solid #ccc;
+}
+
+.active{
+  color: red;
+}

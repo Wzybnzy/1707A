@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/tab/tab",
     "pages/todolist/todolist",
     "pages/list/list",
     "pages/index/index",
