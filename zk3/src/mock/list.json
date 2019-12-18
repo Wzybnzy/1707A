@@ -1,0 +1,20 @@
+[
+    {
+        "name":"主食",
+        "img":"1.jpg",
+        "id":1,
+        "type":"food"
+    },
+    {
+        "name":"肉类",
+        "img":"2.jpg",
+        "id":2,
+        "type":"meta"
+    },
+    {
+        "name":"豆类",
+        "id":3,
+        "img":"3.jpg",
+        "type":"beans"
+    }
+]
