@@ -1,0 +1,15 @@
+<!--pages/scroll/scroll.wxml-->
+<view class="wrapper">
+  <view class="left">
+    <view wx:for="{{list}}" class="list {{index==ind?'active':''}}" bindtap="changeTap" data-ind="{{index}}"> {{item.name}}</view>
+  </view>
+  <scroll-view class="right" scroll-y scroll-into-view="{{target}}" bindscroll="scroll">
+    <view wx:for="{{list}}" id="title{{index}}" class="rightlist">
+      <view class="title">{{item.name}}</view>
+      <view wx:for="{{item.foods}}">
+         <image src="{{item.image}}"></image>
+         <view>{{item.name}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

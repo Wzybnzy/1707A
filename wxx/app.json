@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/scroll/scroll",
     "pages/tab/tab",
     "pages/todolist/todolist",
     "pages/list/list",
