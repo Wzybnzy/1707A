@@ -1,4 +1,4 @@
-import {createStore,combineReducers} from 'redux'
+import {createStore,combineReducers,applyMiddleware} from 'redux'
 // const {createStore} = require('redux');
 
 // const reducer = (state={count:1,list:[]},actions)=>{
@@ -31,13 +31,15 @@ import {createStore,combineReducers} from 'redux'
 
 import list from './list/list'
 import count from './count/count'
-
+import buylist from './buylist/buylist'
+import logger from 'redux-logger'
 const reducer = combineReducers({
     count,
-    list
+    list,
+    buylist
 })
 
-const store = createStore(reducer);
+const store = createStore(reducer,applyMiddleware(logger));
 // console.log(store.getState());
 // store.dispatch({type:'ADD'}) //触发一个dispatch
 // console.log(store.getState())

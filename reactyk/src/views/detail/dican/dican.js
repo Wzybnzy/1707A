@@ -18,14 +18,15 @@ export default class Dican extends Component {
                     <ul>
                         {
                             list && list.map((item, index) =>
-                                <li className={index == ind ? 'cur' : ''} key={index} onClick={this.handleClickleft.bind(this, index)}>{item.name}</li>)
+                                <li className={index == ind ? 'cur' : ''} key={index} onClick={this.handleClickleft.bind(this, index)}>{item.name}{item.num ? item.num :''}</li>)
                         }
                     </ul>
                 </div>
                 <div className="right">
                     <div ref="rightlist">
                         {
-                            list && list.map((item, index) => <Item key={index} item={item} ind={index}/>)
+                            list && list.map((item, index) => 
+                            <Item key={index} item={item} ind={index} handleCount={this.handleCount.bind(this)}/>)
                         }
                     </div>
                 </div>
@@ -36,6 +37,12 @@ export default class Dican extends Component {
     async componentDidMount() {
         let res = await axios.get('/api/shop');
         console.log(res)
+        res.data.goods.forEach(item => {
+            item.num = 0;
+            item.foods.forEach(item1 => {
+                item1.count = 0;
+            });
+        })
         this.setState({ list: res.data.goods })
         let {scrollH} = this.state;
         // console.log(this.refs.rightlist.children);
@@ -59,7 +66,8 @@ export default class Dican extends Component {
     _initScroll(){
         let {scrollH} = this.state;
         this.myScroll = new BScroll('.right',{
-            probeType :3
+            probeType :3,
+            click:true
         });
         this.myScroll.on('scroll',({y})=>{
             let scrollY = Math.abs(y);
@@ -72,5 +80,15 @@ export default class Dican extends Component {
             }
 
         });
+    }
+    handleCount(ind,index,count){ 
+        console.log(ind,index,count);
+        let {list} = this.state;
+        
+        list[ind].foods[index].count = count;
+
+        list[ind].num = list[ind].foods.reduce((prev,cur)=> prev + cur.count,0);
+
+        this.setState({list});
     }
 }
