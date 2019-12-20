@@ -1,13 +1,17 @@
 <template>
-  <dl @click="goToDetail(1,item)">
+  <dl @click="goToDetail(1, item)">
     <dt>
-      <img :src="'http:/'+item.coverUrl" alt="" />
+      <img
+        :src="'https://static.zongheng.com/upload/s_image' + item.coverUrl"
+        alt=""
+      />
     </dt>
     <dd>
-      <h3>标题{{item.bookName}}</h3>
-      <p>作者：{{item.authorName}}</p>
-      <p>更新：{{item.updteChapterName}}</p>
-      <p>简介：{{item.subCateName}}</p>
+      <h3>{{ item.bookName }}</h3>
+      <p>作者：{{ item.authorName }}</p>
+      <p>更新：{{ item.updteChapterName }}</p>
+      <p>简介：{{ item.subCateName }}</p>
+      <slot></slot>
     </dd>
   </dl>
 </template>
@@ -17,18 +21,25 @@ export default {
   props: {
     item: {
       type: Object
+    },
+    flag: {
+      type: Boolean
     }
   },
-  methods:{
-      goToDetail(id,obj){
-          this.$router.push({
-              name:'detail',
-              params:{id},
-              query:{
-                 ...obj
-              }
-          })
+  methods: {
+    goToDetail(id, obj) {
+      //跳转详情
+      console.log(this.flag);
+      if (this.flag) {
+        this.$router.push({
+          name: "detail",
+          params: { id },
+          query: {
+            ...obj
+          }
+        });
       }
+    }
   }
 };
 </script>

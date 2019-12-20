@@ -10,7 +10,7 @@
       </ul>
 
       <div>
-        <Item v-for="(item,index) in newlist" :key="index" :item="item"/>
+        <Item v-for="(item,index) in newlist" :key="index" :item="item" :flag="true"/>
       </div>
   </div>
 </template>

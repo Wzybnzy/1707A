@@ -33,7 +33,7 @@ export default {
           url:'/index/ranking'
         }, {
           name:'书架',
-          url:'/index/book'
+          url:'/index/book/mybook'
         }
       ],
       ind:0
